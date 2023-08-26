@@ -59,7 +59,6 @@ void * nextList(List * list)
 
 void * lastList(List * list)
 {
-  /*
   if (list->head == NULL)
   {
     return NULL; // No hay lista.
@@ -67,18 +66,12 @@ void * lastList(List * list)
   
   list->current = list->tail; // Se modifica el current al final de la lista.
   return (list->current->data); // Se retorna el dato del current.
-  */
-  return NULL;
 }
 
 void * prevList(List * list)
 {
-  /*
   list->current = list->current->prev; // Se mueve el current al nodo anterior.
   return (list->current->data); // Se retorna el dato del current.
-  */
-
-  return NULL;
 }
 
 void pushFront(List * list, void * data) 

@@ -134,23 +134,14 @@ void * popCurrent(List * list)
   void * data = list->current->data; // Se crea un auxiliar de la data del nodo a borrar.
   Node *popNode = list->current; // Se establece el nodo a borrar.
 
-  if (list->head == popNode) // Si el nodo a borrar es el inicio de la lista.
-  {
-    list->head = popNode->next; // Se actualiza el inicio de la lista al siguiente nodo.
-    list->current = list->head; // Se actualiza el current al inicio de la lista.
+  if (popNode->prev != NULL) // Si el nodo a eliminar tiene un nodo antes
+  { // Entonces
+    popNode->prev->next = popNode->next; // Se actualiza el nodo anterior para que apunte al nodo siguiente del cual se va a eliminar.
   }
-  else
-  {
-    Node *prevNode = list->head; // Se establece un "current" auxiliar para recorrer la lista.
-    while (prevNode != NULL && prevNode->next != popNode) // Mientras el current no sea NULL y el siguiente a este no sea el nodo a borrar.
-      {
-        prevNode =prevNode->next; // Se apunta al siguiente nodo en el "current" auxiliar.
-      }
-      if (prevNode != NULL) 
-      {
-        prevNode->next = popNode->next; // El "Current" auxiliar apunta al siguiente nodo del que se borra.
-        list->current = prevNode->next; // Se actualiza el "current" original.
-      }
+  
+  if (popNode->next != NULL) // Si el nodo a eliminar tiene un nodo después
+  { // Entonces
+    popNode->next->prev = popNode->prev; // Se actualiza el siguiente nodo para que apunte al nodo anterior del cual se va a eliminar.
   }
   
   free(popNode); // Se libera la memoria del nodo.

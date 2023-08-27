@@ -92,11 +92,11 @@ void pushBack(List * list, void * data) {
 }
 
 void pushCurrent(List * list, void * data)
-{/*
+{
   Node * newNode = createNode(data); // Se crea un nuevo nodo.
 
   newNode->next = list->current->next; // Se actualiza el puntero.
-  list->current->next = newNode; // Se añade el nodo en la posición siguiente al nodo actual.*/
+  list->current->next = newNode; // Se añade el nodo en la posición siguiente al nodo actual.
 }
 
 void * popFront(List * list) {

@@ -87,8 +87,12 @@ void pushFront(List * list, void * data)
   {
     list->head = newNode;
   }
-  newNode->next = list->head; // Se actualiza el puntero.
-  list->head = newNode; // Se actualiza el inicio de la lista. 
+  else
+  {
+    newNode->next = list->head; // Se actualiza el puntero.
+    list->head = newNode; // Se actualiza el inicio de la lista. 
+  }
+  
 }
 
 void pushBack(List * list, void * data) {

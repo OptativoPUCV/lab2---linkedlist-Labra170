@@ -119,7 +119,7 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list)
-{/*
+{
   void * data = list->current->data; // Se crea un auxiliar de la data del nodo a borrar.
   Node *popNode = list->current; // Se establece el nodo a borrar.
 
@@ -143,8 +143,7 @@ void * popCurrent(List * list)
   }
   
   free(popNode); // Se libera la memoria del nodo.
-  */
-  return NULL; // Se retorna el dato del nodo eliminado.
+  return data;
 }
 
 void cleanList(List * list) {

@@ -69,10 +69,14 @@ void * lastList(List * list)
 }
 
 void * prevList(List * list)
-{/*
+{
+  if (list == NULL || list->current == NULL || list->current->prev == NULL)
+  {
+    return NULL; // No hay siguiente elemento.
+  }
+  
   list->current = list->current->prev; // Se mueve el current al nodo anterior.
   return (list->current->data); // Se retorna el dato del current.*/
-  return NULL;
 }
 
 void pushFront(List * list, void * data) 

@@ -155,7 +155,7 @@ void * popCurrent(List * list)
   }
   
   free(popNode); // Se libera la memoria del nodo.
-  return data;
+  return data; // Se retorna el dato eliminado.
 }
 
 void cleanList(List * list) {

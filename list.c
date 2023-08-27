@@ -82,6 +82,11 @@ void * prevList(List * list)
 void pushFront(List * list, void * data) 
 {
   Node * newNode = createNode(data); // Se crea un nuevo nodo y se guarda su información.
+
+  if (list->head == NULL)
+  {
+    list->head = newNode;
+  }
   newNode->next = list->head; // Se actualiza el puntero.
   list->head = newNode; // Se actualiza el inicio de la lista. 
 }

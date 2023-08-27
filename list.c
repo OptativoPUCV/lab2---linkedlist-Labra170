@@ -86,11 +86,13 @@ void pushFront(List * list, void * data)
   if (list->head == NULL)
   {
     list->head = newNode;
+    list->tail = newNode;
   }
   else
   {
     newNode->next = list->head; // Se actualiza el puntero.
-    list->head = newNode; // Se actualiza el inicio de la lista. 
+    list->head->prev = newNode;
+    list->head = newNode;
   }
   
 }

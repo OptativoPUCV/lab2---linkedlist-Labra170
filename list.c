@@ -144,6 +144,16 @@ void * popCurrent(List * list)
     popNode->next->prev = popNode->prev; // Se actualiza el siguiente nodo para que apunte al nodo anterior del cual se va a eliminar.
   }
   
+  if (popNode == list->head) // Si el nodo a eliminar es el primero de la lista
+  { // Entonces
+    list->head = popNode->next; // El inicio de la lista apunta al siguiente.
+  }
+
+  if (popNode == list->tail) // Si el nodo a eliminar es el último de la lista
+  { // Entonces
+    list->tail = popNode->prev; // El final de la lista apunta al anterior.
+  }
+  
   free(popNode); // Se libera la memoria del nodo.
   return data;
 }

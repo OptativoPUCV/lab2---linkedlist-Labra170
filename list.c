@@ -85,16 +85,15 @@ void pushFront(List * list, void * data)
 
   if (list->head == NULL)
   {
-    list->head = newNode;
+    list->head = newNode; // Se establece el nodo tanto al inicio como al final de la lista.
     list->tail = newNode;
   }
   else
   {
-    newNode->next = list->head; // Se actualiza el puntero.
-    list->head->prev = newNode;
-    list->head = newNode;
+    newNode->next = list->head; // El nodo siguiente al nuevo es la cabeza actual.
+    list->head->prev = newNode; // La cabeza actual tiene como previo al nuevo nodo.
+    list->head = newNode; // Se actualiza la cabeza al nuevo nodo.
   }
-  
 }
 
 void pushBack(List * list, void * data) {

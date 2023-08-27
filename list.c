@@ -72,18 +72,18 @@ void * prevList(List * list)
 {
   if (list == NULL || list->current == NULL || list->current->prev == NULL)
   {
-    return NULL; // No hay siguiente elemento.
+    return NULL; // No hay elemento anterior.
   }
   
   list->current = list->current->prev; // Se mueve el current al nodo anterior.
-  return (list->current->data); // Se retorna el dato del current.*/
+  return (list->current->data); // Se retorna el dato del current.
 }
 
 void pushFront(List * list, void * data) 
-{/*
+{
   Node * newNode = createNode(data); // Se crea un nuevo nodo y se guarda su información.
   newNode->next = list->head; // Se actualiza el puntero.
-  list->head = newNode; // Se actualiza el inicio de la lista. */
+  list->head = newNode; // Se actualiza el inicio de la lista. 
 }
 
 void pushBack(List * list, void * data) {

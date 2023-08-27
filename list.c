@@ -107,11 +107,16 @@ void pushCurrent(List * list, void * data)
   newNode->prev = list->current; // El nodo anterior del nuevo nodo es el current actual.
   newNode->next = list->current->next; // El nodo siguiento del nuevo nodo es el siguiente al current actual.
 
-  if (list->current->next != NULL) // Si el siguiente nodo al actual no es NULO.
+  if (list->current->next != NULL) // Si el siguiente nodo al actual no es NULO
   { // Entonces
     list->current->next->prev = newNode; // El nodo previo del siguiente nodo del current, apunta el nuevo nodo.
   }
   list->current->next = newNode; // El nodo siguiente al current apunta al nuevo nodo.
+
+  if (list->current == list->tail) // Si el current es el elemento final de la lista
+  { // Entonces
+    list->tail = newNode; // El final de la lista es el nuevo nodo.
+  }
 }
 
 void * popFront(List * list) {
